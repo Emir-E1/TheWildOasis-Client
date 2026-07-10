@@ -30,6 +30,12 @@
   }
 }
 
+@theme {
+  /*COLORS*/
+
+  --color-primary: "#4225a0";
+}
+
 /* For data picker */
 
 .rdp {
