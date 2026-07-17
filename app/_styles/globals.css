@@ -44,3 +44,13 @@
   --rdp-background-color: theme("colors.accent.600") !important;
   margin: 0 !important;
 }
+
+.rdp-months {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem;
+}
+
+.rdp-month {
+  flex: 1 1 0;
+}

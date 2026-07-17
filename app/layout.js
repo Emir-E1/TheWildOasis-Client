@@ -3,6 +3,7 @@ import Logo from "./_components/Logo";
 import Navigation from "./_components/Navigation";
 import "@/app/_styles/globals.css";
 import { Josefin_Sans } from "next/font/google";
+import { ReservationProvider } from "./context/ReservationContext";
 
 export const metadata = {
   title: {
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
         <Header />
         <div>
           <main className="max-w-7xl  mx-auto flex-1 grid w-full px-8 py-12">
-            {children}
+            <ReservationProvider>{children}</ReservationProvider>
           </main>
         </div>
       </body>

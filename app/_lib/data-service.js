@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 // GET
 
 export async function getCabin(id) {
+  // await new Promise((reseolve) => setTimeout(reseolve, 2000));
   const { data, error } = await supabase
     .from("cabins")
     .select("*")
@@ -125,6 +126,7 @@ export async function getBookedDatesByCabinId(cabinId) {
 }
 
 export async function getSettings() {
+  await new Promise((res) => setTimeout(res, 2000));
   const { data, error } = await supabase.from("settings").select("*").single();
 
   if (error) {
