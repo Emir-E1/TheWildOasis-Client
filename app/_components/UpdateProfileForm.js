@@ -1,11 +1,20 @@
 "use client";
-function UpdateProfileForm({ children }) {
+
+import { updateProfileAction } from "../_lib/action";
+
+function UpdateProfileForm({ guest, children }) {
+  const { fullName, email, nationality, nationalID, countryFlag } = guest;
+
   // CHANGE
+  /*
   const countryFlag = "pt.jpg";
   const nationality = "portugal";
-
+*/
   return (
-    <form className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
+    <form
+      className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col"
+      action={updateGuestAction}
+    >
       <div className="space-y-2">
         <label>Full name</label>
         <input
