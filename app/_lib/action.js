@@ -27,4 +27,6 @@ export async function updateGuestAction(formData) {
     .select()
     .single();
   console.log(updateData);
+
+  revalidatePath("/account/profile");
 }

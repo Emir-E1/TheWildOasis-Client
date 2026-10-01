@@ -1,8 +1,9 @@
 import ReservationCard from "@/app/_components/ReservationCard";
 
-export default function Page() {
+export default async function Page() {
+  const { session } = await auth();
+  const bookings = await getBookings(session.user.guestId);
   // CHANGE
-  const bookings = [];
 
   return (
     <div>
