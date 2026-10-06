@@ -4,7 +4,7 @@ import { auth } from "@/app/_lib/auth";
 import { getGuest } from "@/app/_lib/data-service";
 
 export default async function Page() {
-  const { session } = auth();
+  const session = await auth();
   const guest = await getGuest(session.user.email);
   // CHANGE
   const countryFlag = "pt.jpg";

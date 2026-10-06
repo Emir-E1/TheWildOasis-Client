@@ -137,18 +137,16 @@ export async function getSettings() {
   return data;
 }
 
-export async function getCountries() {
-  try {
-    const res = await fetch(
-      "https://restcountries.com/v2/all?fields=name,flag"
-    );
-    const countries = await res.json();
-    return countries;
-  } catch {
-    throw new Error("Could not fetch countries");
-  }
-}
+import countries from "world-countries";
 
+export async function getCountries() {
+  return countries
+    .map((c) => ({
+      name: c.name.common,
+      flag: `https://flagcdn.com/w40/${c.cca2.toLowerCase()}.png`,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
 /////////////
 // CREATE
 

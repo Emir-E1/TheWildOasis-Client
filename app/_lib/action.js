@@ -1,6 +1,7 @@
 "use server"; //the famous bridge its SA not SC
 
-import { signIn, signOut } from "./auth";
+import { revalidatePath } from "next/cache";
+import { auth, signIn, signOut } from "./auth";
 import { supabase } from "./supabase";
 
 export async function signInAction() {

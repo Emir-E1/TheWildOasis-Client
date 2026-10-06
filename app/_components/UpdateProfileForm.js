@@ -1,6 +1,6 @@
 "use client";
 
-import { updateProfileAction } from "../_lib/action";
+import { updateGuestAction } from "../_lib/action";
 import SubmitButton from "./SubmitButton";
 
 function UpdateProfileForm({ guest, children }) {
@@ -9,7 +9,7 @@ function UpdateProfileForm({ guest, children }) {
   return (
     <form
       className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col"
-      action={updateProfileAction}
+      action={updateGuestAction}
     >
       <div className="space-y-2">
         <label htmlFor="fullName">Full name</label>
