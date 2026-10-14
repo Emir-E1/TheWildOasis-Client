@@ -205,9 +205,13 @@ export async function updateBooking(id, updatedFields) {
     .single();
 
   if (error) {
-    console.error(error);
-    throw new Error("Booking could not be updated");
+    console.error("Supabase error:", error.message);
+    console.error("Error details:", error.details);
+    console.error("Error code:", error.code);
+
+    throw new Error(error.message);
   }
+
   return data;
 }
 
