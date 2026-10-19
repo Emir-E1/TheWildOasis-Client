@@ -2,15 +2,14 @@
 
 import { TrashIcon } from "@heroicons/react/24/solid";
 import { useTransition } from "react";
-import { deleteBookingAction } from "../_lib/action";
 
 // useTransition car le bouton est hors <form> (useFormStatus ne marcherait pas)
-function DeleteReservation({ bookingId }) {
+function DeleteReservation({ bookingId, onDelete }) {
   const [isPending, startTransition] = useTransition();
 
   function handleDelete() {
     if (confirm("Are you sure you want to delete this reservation?"))
-      startTransition(() => deleteBookingAction(bookingId));
+      startTransition(() => onDelete(bookingId));
   }
 
   return (
